@@ -4,10 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.*;
@@ -19,6 +15,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import produto.Produto;
+import produto.ProdutoNaoEncontradoException;
 
 class CarrinhoTest {
 	
@@ -58,7 +55,22 @@ class CarrinhoTest {
 		Assertions.assertEquals(250.00,tot);
 	}
 	
+	@DisplayName ("Testa remoção de item")
+	@Test
+	public void testRemocaoItem() {
+		carrinho.addItem(livro);
+		try {
+			carrinho.removeItem(livro2);
+			fail("Exceção não lançada");
+		} catch (ProdutoNaoEncontradoException e) {
+			e.getMessage();
+		}
 	
+		
+		
+	}
 	
-
+				
 }
+
+
