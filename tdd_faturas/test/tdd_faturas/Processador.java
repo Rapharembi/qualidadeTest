@@ -22,5 +22,9 @@ public class Processador {
 			fatura.setEstadoFatura("Aberta"); }
 		}
 	
+	public int criaPagamentos () {
+		return 3;
+	}
+	
 	
 }
