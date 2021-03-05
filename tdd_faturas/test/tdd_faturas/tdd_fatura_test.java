@@ -33,10 +33,15 @@ public class tdd_fatura_test {
 	 
 	@DisplayName ("Testa a soma de boletos")
 	@Test
-	public void testFaturaPaga () {
+	public void testSomaBoletos () {
 	 Assertions.assertEquals(1000, processador.somaBoletos(bols));
 	}
 
+	@DisplayName ("Testa fatura paga")
+	@Test
+	public void testFaturaPaga() {
+		Assertions.assertEquals("Paga", processador.bateFatura);
+	}
 	
 
 
