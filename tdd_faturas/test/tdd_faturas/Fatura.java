@@ -1,5 +1,4 @@
 package tdd_faturas;
-import java.time.*;
 import java.util.Arrays;
 
 public class Fatura {
@@ -51,7 +50,4 @@ public class Fatura {
 	}
 	
 	
-	public int somaBoletos(Boleto[] bols) {
-		return Arrays.stream(bols).mapToInt(Boleto::getValor).sum();
-	}
 }

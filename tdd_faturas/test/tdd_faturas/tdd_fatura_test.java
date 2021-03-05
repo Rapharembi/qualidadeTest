@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import java.time.*;
 public class tdd_fatura_test {
 
+	 Processador processador;
 	 Fatura fatura;
 	 Boleto bol1;
 	 Boleto bol2;
@@ -17,7 +18,7 @@ public class tdd_fatura_test {
 	  @BeforeEach
 	  
 	  public void inicializa() { 
-	  
+	  processador = new Processador();
 	  fatura = new Fatura (1000,"2021-03-23","Reginaldo Rossi","Em Aberto"); 
 	  Boleto bol1 = new Boleto (300,"2021-02-23",456789);
 	  Boleto bol2 = new Boleto (300,"2021-02-24",4556798); 
@@ -30,9 +31,18 @@ public class tdd_fatura_test {
 	  }
 	 
 	 
-	@DisplayName ("Testa a fatura paga")
+	@DisplayName ("Testa a soma de boletos")
 	@Test
 	public void testFaturaPaga () {
-	 Assertions.assertEquals(1000, fatura.somaBoletos(bols));
+	 Assertions.assertEquals(1000, processador.somaBoletos(bols));
 	}
+
+	
+
+
+
+
+
+
 }
+
