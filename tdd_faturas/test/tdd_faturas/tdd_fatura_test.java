@@ -40,7 +40,8 @@ public class tdd_fatura_test {
 	@DisplayName ("Testa fatura paga")
 	@Test
 	public void testFaturaPaga() {
-		Assertions.assertEquals("Paga", processador.bateFatura());
+		processador.bateFatura(fatura, bols);
+		Assertions.assertEquals("Paga", fatura.estadoFatura);
 	}
 	
 

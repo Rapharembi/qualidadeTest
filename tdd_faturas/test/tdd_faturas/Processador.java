@@ -13,8 +13,16 @@ public class Processador {
 		return Arrays.stream(bols).mapToInt(Boleto::getValor).sum();
 	}
 
-	public String bateFatura () {
-		return "Paga";
+	public void bateFatura (Fatura fatura, Boleto[] bols) {
+		
+		if (fatura.valor == somaBoletos(bols)) {
+			fatura.setEstadoFatura("Paga");
+		}
+		/*
+		 * else if (fatura.valor < somaBoletos(bols)) {
+		 * fatura.setEstadoFatura("Aberta"); }
+		 */
+		
 	}
 	
 	
