@@ -13,7 +13,9 @@ public class Processador {
 		return Arrays.stream(bols).mapToInt(Boleto::getValor).sum();
 	}
 
-	
+	public String bateFatura () {
+		return "Paga";
+	}
 	
 	
 }
