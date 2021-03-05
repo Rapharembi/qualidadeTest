@@ -20,7 +20,7 @@ public class tdd_fatura_test {
 	  
 	  public void inicializa() { 
 	  processador = new Processador();
-	  fatura = new Fatura (1000,"2021-03-23","Reginaldo Rossi","Em Aberto"); 
+	  fatura = new Fatura (1000,"2021-03-23","Reginaldo Rossi","Aberta"); 
 	  Boleto bol1 = new Boleto (300,"2021-02-23",456789);
 	  Boleto bol2 = new Boleto (300,"2021-02-24",4556798); 
 	  Boleto bol3 = new Boleto (400,"2021-02-26",456845);
@@ -53,6 +53,13 @@ public class tdd_fatura_test {
 	public void testFaturaAberta() {
 		processador.bateFatura(fatura, bols2);
 		Assertions.assertEquals("Aberta", fatura.estadoFatura);
+	}
+	
+	@DisplayName ("Testa pagamento")
+	@Test
+	public void testPagamento () {
+		Assertions.assertEquals(3, processador.criaPagamentos());
+		
 	}
 
 

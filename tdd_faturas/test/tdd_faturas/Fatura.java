@@ -37,7 +37,7 @@ public class Fatura {
 		return nomeCliente;
 	}
 
-	public void setCodigo (String nomeCliente) {
+	public void setNomeCliente (String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
 	
