@@ -15,15 +15,12 @@ public class Processador {
 
 	public void bateFatura (Fatura fatura, Boleto[] bols) {
 		
-		if (fatura.valor == somaBoletos(bols)) {
+		if (fatura.valor <= somaBoletos(bols)) {
 			fatura.setEstadoFatura("Paga");
 		}
-		/*
-		 * else if (fatura.valor < somaBoletos(bols)) {
-		 * fatura.setEstadoFatura("Aberta"); }
-		 */
-		
-	}
+		else{
+			fatura.setEstadoFatura("Aberta"); }
+		}
 	
 	
 }

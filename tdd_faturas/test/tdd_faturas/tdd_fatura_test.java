@@ -14,6 +14,7 @@ public class tdd_fatura_test {
 	 Boleto bol2;
 	 Boleto bol3;
 	 Boleto[] bols;
+	 Boleto [] bols2;
 	
 	  @BeforeEach
 	  
@@ -24,9 +25,12 @@ public class tdd_fatura_test {
 	  Boleto bol2 = new Boleto (300,"2021-02-24",4556798); 
 	  Boleto bol3 = new Boleto (400,"2021-02-26",456845);
 	  bols = new Boleto [3];
+	  bols2 = new Boleto [2];
 	  bols[0] = bol1;
 	  bols[1] = bol2;
 	  bols[2] = bol3;
+	  bols2[0] = bol1;
+	  bols2 [1] = bol2;
 		   
 	  }
 	 
@@ -44,7 +48,12 @@ public class tdd_fatura_test {
 		Assertions.assertEquals("Paga", fatura.estadoFatura);
 	}
 	
-
+	@DisplayName ("Testa fatura em aberto")
+	@Test
+	public void testFaturaAberta() {
+		processador.bateFatura(fatura, bols2);
+		Assertions.assertEquals("Aberta", fatura.estadoFatura);
+	}
 
 
 
