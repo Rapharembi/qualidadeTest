@@ -19,12 +19,18 @@ public class Processador {
 			fatura.setEstadoFatura("Paga");
 		}
 		else{
-			fatura.setEstadoFatura("Aberta"); }
+			fatura.setEstadoFatura("Aberta"); 
 		}
-	
-	public int criaPagamentos () {
-		return 3;
 	}
+	
+	public Pagamento[] criaPagamentos(Boleto [] bols,Pagamento [] pags) {
+		pags = new Pagamento [bols.length];
+		for (int i = 0; i<bols.length;i++) {
+				pags[i] = new Pagamento (bols[i].valor,bols[i].data,"Boleto");
+			}
+		return pags;
+	}
+	
 	
 	
 }

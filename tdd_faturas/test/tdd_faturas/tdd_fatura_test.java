@@ -15,6 +15,7 @@ public class tdd_fatura_test {
 	 Boleto bol3;
 	 Boleto[] bols;
 	 Boleto [] bols2;
+	 Pagamento[] pags;
 	
 	  @BeforeEach
 	  
@@ -55,11 +56,17 @@ public class tdd_fatura_test {
 		Assertions.assertEquals("Aberta", fatura.estadoFatura);
 	}
 	
-	@DisplayName ("Testa pagamento")
+	@DisplayName ("Testa criação de pagamentos")
 	@Test
 	public void testPagamento () {
-		Assertions.assertEquals(3, processador.criaPagamentos());
-		
+		pags = processador.criaPagamentos(bols, pags);
+		Assertions.assertEquals(3, pags.length);
+	}
+	
+	@DisplayName ("Testa Processamento")
+	@Test
+	public void testProcessamento() {
+		Assertions.assertEquals("Paga", processador.processaFatura);
 	}
 
 
