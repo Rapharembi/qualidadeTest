@@ -31,8 +31,10 @@ public class Processador {
 		return pags;
 	}
 	
-	public String processaFatura () {
-		return "Paga";
+	public Pagamento[] processaFatura (Fatura fatura, Boleto[] bols, Pagamento [] pags) {
+		bateFatura(fatura,bols);
+		pags = criaPagamentos (bols,pags);
+		return pags;
 	}
 	
 }
