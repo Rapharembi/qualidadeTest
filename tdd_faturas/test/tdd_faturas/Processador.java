@@ -31,6 +31,8 @@ public class Processador {
 		return pags;
 	}
 	
-	
+	public String processaFatura () {
+		return "Paga";
+	}
 	
 }

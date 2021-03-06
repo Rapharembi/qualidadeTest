@@ -66,7 +66,7 @@ public class tdd_fatura_test {
 	@DisplayName ("Testa Processamento")
 	@Test
 	public void testProcessamento() {
-		Assertions.assertEquals("Paga", processador.processaFatura);
+		Assertions.assertEquals("Paga", processador.processaFatura());
 	}
 
 
